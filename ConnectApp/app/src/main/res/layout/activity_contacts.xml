@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".ContactsActivity">
+
+    <TextView android:id="@+id/which_contacts_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Who do you want to stay in touch with?"
+        android:textSize="24dp"/>
+
+    <EditText android:id="@+id/search_contacts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/which_contacts_text"
+        android:paddingTop="30dp"
+        android:hint="Name" />
+
+    <Button android:id="@+id/continue_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="Continue"
+        android:textSize="24dp"
+        android:height="80dp"
+        android:onClick="continueAction" />
+
+</RelativeLayout>

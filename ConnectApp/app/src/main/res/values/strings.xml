@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ConnectApp</string>
+    <string name="title_activity_availability">Availability</string>
 </resources>

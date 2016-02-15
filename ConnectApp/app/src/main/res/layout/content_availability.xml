@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".AvailabilityActivity"
+    tools:showIn="@layout/activity_availability">
+
+    <TextView android:id="@+id/what_availability_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="What times are generally best for you?"
+        android:textSize="24dp"/>
+
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Monday"/>-->
+    
+    <GridLayout android:id="@+id/availability_grid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="4"
+        android:rowCount="7"
+        android:orientation="horizontal"
+        android:layout_below="@id/what_availability_text"
+        android:paddingTop="30dp"
+        >
+
+        <!--<TextView-->
+            <!--android:text="Day"-->
+            <!--android:textSize="20dp"-->
+            <!--android:paddingRight="20dp"-->
+            />
+
+        <TextView
+            android:text="Saturday"
+            android:textSize="20dp"
+            />
+        <CheckBox
+            />
+        <CheckBox
+            />
+        <CheckBox
+            />
+        <TextView
+            android:text="Sunday"
+            android:textSize="20dp"
+            />
+        <CheckBox
+            />
+        <CheckBox
+            />
+        <CheckBox
+            />
+        <TextView
+            android:text="Monday"
+            android:textSize="20dp"
+            />
+        <CheckBox
+            />
+        <CheckBox
+            />
+        <CheckBox
+            />
+        <TextView
+            android:text="Tuesday"
+            android:textSize="20dp"
+            />
+        <CheckBox
+            />
+        <CheckBox
+            />
+        <CheckBox
+            />
+        <TextView
+            android:text="Wednesday"
+            android:textSize="20dp"
+            />
+        <CheckBox
+            />
+        <CheckBox
+            />
+        <CheckBox
+            />
+        <TextView
+            android:text="Thursday"
+            android:textSize="20dp"
+            />
+        <CheckBox
+            />
+        <CheckBox
+            />
+        <CheckBox
+            />
+
+    </GridLayout>
+
+    <Button android:id="@+id/continue_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="Continue"
+        android:textSize="24dp"
+        android:height="80dp"
+        android:onClick="continueAction" />
+
+
+</RelativeLayout>
