@@ -1,6 +1,7 @@
 package com.connect.connectapp;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -11,6 +12,9 @@ import android.view.View;
 import android.widget.CheckBox;
 
 public class AvailabilityActivity extends AppCompatActivity {
+
+    String[] DaysOfWeek = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
+    String[] TimesOfDay = {"Morning", "Afternoon", "Evening"};
 
     boolean[][] Availability = {
             {false, false, false},  // Monday
@@ -72,14 +76,41 @@ public class AvailabilityActivity extends AppCompatActivity {
     //  Store off the indicated availability of the user.
     private void storeAvailability() {
 
+        SharedPreferences pref = getSharedPreferences("Availability", MODE_PRIVATE);
+        SharedPreferences.Editor editor = pref.edit();
+
         for (int i = 0; i < AvailabilityIds.length; i++) {
             for (int j = 0; j < AvailabilityIds[0].length; j++) {
+
+                // Get the availability from the UI
                 CheckBox checkbox = (CheckBox)findViewById(AvailabilityIds[i][j]);
                 Availability[i][j] = checkbox.isChecked();
-                Log.d("Availability", String.valueOf(Availability[i][j]));
+                //Log.d("Availability", String.valueOf(Availability[i][j]));
+
+                // Save it in shared preferences
+                editor.putBoolean("Available" + DaysOfWeek[i] + TimesOfDay[j], Availability[i][j]);
             }
         }
 
+        editor.commit();
+
+        //this.testSharedPreferences();
+
+    }
+
+    // Read availability from shared preferences and print it to the console
+    private void testSharedPreferences() {
+
+        SharedPreferences pref = getSharedPreferences("Availability", MODE_PRIVATE);
+
+        for (int i = 0; i < AvailabilityIds.length; i++) {
+            for (int j = 0; j < AvailabilityIds[0].length; j++) {
+
+                // Read availability from shared preferences
+                boolean availability = pref.getBoolean("Available" + DaysOfWeek[i] + TimesOfDay[j],false);
+                Log.d("Available" + DaysOfWeek[i] + TimesOfDay[j], String.valueOf(availability));
+            }
+        }
     }
 
 }
