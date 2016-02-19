@@ -40,65 +40,76 @@
             />
 
         <TextView
-            android:text="Saturday"
-            android:textSize="20dp"
-            />
-        <CheckBox
-            />
-        <CheckBox
-            />
-        <CheckBox
-            />
-        <TextView
-            android:text="Sunday"
-            android:textSize="20dp"
-            />
-        <CheckBox
-            />
-        <CheckBox
-            />
-        <CheckBox
-            />
-        <TextView
             android:text="Monday"
             android:textSize="20dp"
             />
-        <CheckBox
+        <CheckBox android:id="@+id/MondayMorning"
             />
-        <CheckBox
+        <CheckBox android:id="@+id/MondayAfternoon"
             />
-        <CheckBox
+        <CheckBox android:id="@+id/MondayEvening"
             />
         <TextView
             android:text="Tuesday"
             android:textSize="20dp"
             />
-        <CheckBox
+        <CheckBox android:id="@+id/TuesdayMorning"
             />
-        <CheckBox
+        <CheckBox android:id="@+id/TuesdayAfternoon"
             />
-        <CheckBox
+        <CheckBox android:id="@+id/TuesdayEvening"
             />
         <TextView
             android:text="Wednesday"
             android:textSize="20dp"
             />
-        <CheckBox
+        <CheckBox android:id="@+id/WednesdayMorning"
             />
-        <CheckBox
+        <CheckBox android:id="@+id/WednesdayAfternoon"
             />
-        <CheckBox
+        <CheckBox android:id="@+id/WednesdayEvening"
             />
         <TextView
             android:text="Thursday"
             android:textSize="20dp"
             />
-        <CheckBox
+        <CheckBox android:id="@+id/ThursdayMorning"
             />
-        <CheckBox
+        <CheckBox android:id="@+id/ThursdayAfternoon"
             />
-        <CheckBox
+        <CheckBox android:id="@+id/ThursdayEvening"
             />
+        <TextView
+            android:text="Friday"
+            android:textSize="20dp"
+            />
+        <CheckBox android:id="@+id/FridayMorning"
+            />
+        <CheckBox android:id="@+id/FridayAfternoon"
+            />
+        <CheckBox android:id="@+id/FridayEvening"
+            />
+        <TextView
+            android:text="Saturday"
+            android:textSize="20dp"
+            />
+        <CheckBox android:id="@+id/SaturdayMorning"
+            />
+        <CheckBox android:id="@+id/SaturdayAfternoon"
+            />
+        <CheckBox android:id="@+id/SaturdayEvening"
+            />
+        <TextView
+            android:text="Sunday"
+            android:textSize="20dp"
+            />
+        <CheckBox android:id="@+id/SundayMorning"
+            />
+        <CheckBox android:id="@+id/SundayAfternoon"
+            />
+        <CheckBox android:id="@+id/SundayEvening"
+            />
+
 
     </GridLayout>
 
