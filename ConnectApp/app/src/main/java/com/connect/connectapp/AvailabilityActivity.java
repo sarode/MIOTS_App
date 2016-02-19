@@ -67,6 +67,7 @@ public class AvailabilityActivity extends AppCompatActivity {
     public void continueAction(View view) {
 
         this.storeAvailability();
+        this.testStorage();
 
         // Move on to the availability screen
 //        Intent intent = new Intent(this, AvailabilityActivity.class);
@@ -94,12 +95,10 @@ public class AvailabilityActivity extends AppCompatActivity {
 
         editor.commit();
 
-        //this.testSharedPreferences();
-
     }
 
     // Read availability from shared preferences and print it to the console
-    private void testSharedPreferences() {
+    private void testStorage() {
 
         SharedPreferences pref = getSharedPreferences("Availability", MODE_PRIVATE);
 
