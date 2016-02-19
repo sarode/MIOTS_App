@@ -69,9 +69,9 @@ public class AvailabilityActivity extends AppCompatActivity {
         this.storeAvailability();
         this.testStorage();
 
-        // Move on to the availability screen
-//        Intent intent = new Intent(this, AvailabilityActivity.class);
-//        startActivity(intent);
+        // Move on to the confirmation screen
+        Intent intent = new Intent(this, ConfirmationActivity.class);
+        startActivity(intent);
     }
 
     //  Store off the indicated availability of the user.
