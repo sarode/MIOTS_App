@@ -26,15 +26,6 @@ public class ConfirmationActivity extends AppCompatActivity {
             TextView your_first_call_obj = (TextView)findViewById(R.id.your_first_call);
             your_first_call_obj.setText("Great, your first call is scheduled for " + catchup_date_and_time);
         }
-
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
     }
 
 }

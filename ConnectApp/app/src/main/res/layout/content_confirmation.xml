@@ -25,7 +25,8 @@
         android:layout_alignParentBottom="true"
         android:text="Reschedule"
         android:textSize="24dp"
-        android:height="80dp" />
+        android:height="80dp"
+        android:onClick="confirmAction"/>
 
     <Button android:id="@+id/confirm_button"
         android:layout_width="match_parent"
@@ -34,5 +35,6 @@
         android:paddingBottom="10dp"
         android:text="Confirm"
         android:textSize="24dp"
-        android:height="80dp" />
+        android:height="80dp"
+        android:onClick="rescheduleAction"/>
 </RelativeLayout>
