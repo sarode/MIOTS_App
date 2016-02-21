@@ -10,6 +10,9 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.TextView;
+
+import java.util.Calendar;
 
 public class AvailabilityActivity extends AppCompatActivity {
 
@@ -68,6 +71,7 @@ public class AvailabilityActivity extends AppCompatActivity {
 
         this.storeAvailability();
         this.testStorage();
+        this.calculateFirstCall();
 
         // Move on to the confirmation screen
         Intent intent = new Intent(this, ConfirmationActivity.class);
@@ -111,5 +115,40 @@ public class AvailabilityActivity extends AppCompatActivity {
             }
         }
     }
+
+    //  Store off the indicated availability of the user.
+    private void calculateFirstCall() {
+
+        SharedPreferences pref = getSharedPreferences("Availability", MODE_PRIVATE);
+
+        int current_day_of_week = Calendar.getInstance().get(Calendar.DAY_OF_WEEK);
+        Log.d("current day of week:", String.valueOf(current_day_of_week));
+
+        String catchup_day = DaysOfWeek[0];     // Sunday
+        String catchup_time = TimesOfDay[2];    // Evening
+
+        outerloop:
+        for (int i = 0; i < DaysOfWeek.length; i++) {
+            for (int j = 0; j < TimesOfDay.length; j++) {
+                boolean MyAvailability = pref.getBoolean("Available" + DaysOfWeek[i] + TimesOfDay[j], false);
+                boolean HerAvailability = FakeAvailability[i][j];
+
+                if (MyAvailability == true && HerAvailability == true) {
+                    catchup_day = DaysOfWeek[i];
+                    catchup_time = TimesOfDay[j];
+                    break outerloop;
+                }
+            }
+        }
+
+        Log.d("Availability:", catchup_day + catchup_time);
+
+        //setContentView(R.layout.activity_confirmation);
+        //ConfirmationActivity.your_first_call_obj.setText("Great! Your first call is scheduled for");
+//        View view = (View)getLayoutInflater().inflate(R.layout.activity_confirmation, null);
+//        TextView your_first_call = (TextView) view.findViewById(R.id.your_first_call);
+//        your_first_call.setText("Great! Your first call is scheduled for");
+    }
+
 
 }
