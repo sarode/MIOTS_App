@@ -73,9 +73,6 @@ public class AvailabilityActivity extends AppCompatActivity {
         this.testStorage();
         this.calculateFirstCall();
 
-        // Move on to the confirmation screen
-        Intent intent = new Intent(this, ConfirmationActivity.class);
-        startActivity(intent);
     }
 
     //  Store off the indicated availability of the user.
@@ -124,7 +121,7 @@ public class AvailabilityActivity extends AppCompatActivity {
         int current_day_of_week = Calendar.getInstance().get(Calendar.DAY_OF_WEEK);
         Log.d("current day of week:", String.valueOf(current_day_of_week));
 
-        String catchup_day = DaysOfWeek[0];     // Sunday
+        String catchup_day = DaysOfWeek[6];     // Sunday
         String catchup_time = TimesOfDay[2];    // Evening
 
         outerloop:
@@ -143,12 +140,17 @@ public class AvailabilityActivity extends AppCompatActivity {
 
         Log.d("Availability:", catchup_day + catchup_time);
 
-        //setContentView(R.layout.activity_confirmation);
-        //ConfirmationActivity.your_first_call_obj.setText("Great! Your first call is scheduled for");
-//        View view = (View)getLayoutInflater().inflate(R.layout.activity_confirmation, null);
-//        TextView your_first_call = (TextView) view.findViewById(R.id.your_first_call);
-//        your_first_call.setText("Great! Your first call is scheduled for");
+        this.startConfirmationActivity(catchup_day + catchup_time);
     }
 
+    //  Start the new activity with the call date and time
+    private void startConfirmationActivity(String catchup_day_and_time) {
+
+        // Move on to the confirmation screen
+        Intent intent = new Intent(this, ConfirmationActivity.class);
+        intent.putExtra("CATCHUP_DAY_AND_TIME", catchup_day_and_time);
+        startActivity(intent);
+
+    }
 
 }

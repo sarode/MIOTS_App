@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 public class ConfirmationActivity extends AppCompatActivity {
 
-    public static TextView your_first_call_obj;
+    //public static TextView your_first_call_obj;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +19,13 @@ public class ConfirmationActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        your_first_call_obj = (TextView)findViewById(R.id.your_first_call);
+
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            String catchup_date_and_time = extras.getString("CATCHUP_DAY_AND_TIME");
+            TextView your_first_call_obj = (TextView)findViewById(R.id.your_first_call);
+            your_first_call_obj.setText("Great, your first call is scheduled for " + catchup_date_and_time);
+        }
 
 //        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 //        fab.setOnClickListener(new View.OnClickListener() {
