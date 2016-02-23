@@ -13,6 +13,7 @@ import android.widget.CheckBox;
 import android.widget.TextView;
 
 import java.util.Calendar;
+import java.util.logging.Logger;
 
 public class AvailabilityActivity extends AppCompatActivity {
 
@@ -131,7 +132,88 @@ public class AvailabilityActivity extends AppCompatActivity {
 
         Log.d("Availability:", catchup_day + catchup_time);
 
+        Calendar catchup_date = this.getNextDateForDayOfWeek(catchup_day);
+        String catchup_day_of_week = this.convertToDayOfWeek(catchup_date.get(Calendar.DAY_OF_WEEK));
+        String month = this.theMonth(catchup_date.get(Calendar.MONTH));
+        int catchup_date_of_month = catchup_date.get(Calendar.DAY_OF_MONTH);
+
+        Log.d("Catchup Day: ", catchup_day_of_week);
+        Log.d("Month: ", month);
+        Log.d("Date: ", String.valueOf(catchup_date_of_month));
+
         this.startConfirmationActivity(catchup_day + catchup_time);
+    }
+
+    private static String theMonth(int month){
+        String[] monthNames = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+        return monthNames[month];
+    }
+
+    // get the date of the next Wednesday, for example
+    private Calendar getNextDateForDayOfWeek(String day_of_week) {
+
+        int dow = this.convertToCalendarDay(day_of_week);
+
+        // get the current date
+        Calendar date = Calendar.getInstance();
+
+        // get the number of days between the day in question and the current day
+        int diff = dow - date.get(Calendar.DAY_OF_WEEK);
+
+        // if the day has already passed this week, then use next week's date
+        if (!(diff >0)) {
+            diff +=7;
+        }
+
+        // add the difference to the current date to get the desired date
+        date.add(Calendar.DAY_OF_MONTH, diff);
+
+        return date;
+
+    }
+
+    private int convertToCalendarDay(String day_of_week) {
+        if (day_of_week == "Monday") {
+            return Calendar.MONDAY; // 2
+        } else if (day_of_week == "Tuesday") {
+            return Calendar.TUESDAY; // 3
+        } else if (day_of_week == "Wednesday") {
+            return Calendar.WEDNESDAY; // 4
+        } else if (day_of_week == "Thursday") {
+            return Calendar.THURSDAY; // 5
+        } else if (day_of_week == "Friday") {
+            return Calendar.FRIDAY; // 6
+        } else if (day_of_week == "Saturday") {
+            return Calendar.SATURDAY; // 7
+        } else if (day_of_week == "Sunday") {
+            return Calendar.SUNDAY; // 1
+        } else {
+            Log.d("","Not a valid day of week");
+        }
+
+        return Calendar.SUNDAY;
+    }
+
+    private String convertToDayOfWeek(int calendar_day) {
+        if (calendar_day == Calendar.MONDAY) {
+            return "Monday"; // 2
+        } else if (calendar_day == Calendar.TUESDAY) {
+            return "Tuesday"; // 3
+        } else if (calendar_day == Calendar.WEDNESDAY) {
+            return "Wednesday"; // 4
+        } else if (calendar_day == Calendar.THURSDAY) {
+            return "Thursday"; // 5
+        } else if (calendar_day == Calendar.FRIDAY) {
+            return "Friday"; // 6
+        } else if (calendar_day == Calendar.SATURDAY) {
+            return "Saturday"; // 7
+        } else if (calendar_day == Calendar.SUNDAY) {
+            return "Sunday"; // 1
+        } else {
+            Log.d("","Not a valid day of week");
+        }
+
+        return "Sunday";
     }
 
     //  Start the new activity with the call date and time
