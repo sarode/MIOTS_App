@@ -5,12 +5,17 @@ import android.app.ListActivity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.provider.ContactsContract;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 
@@ -28,6 +33,7 @@ public class ContactsActivity extends ListActivity {
 
     ListView lv;
     Cursor cursor1;
+    boolean color_initialized = false;
     public static final int MY_PERMISSIONS_REQUEST_READ_CONTACTS = 0;
 
     @Override
@@ -78,6 +84,32 @@ public class ContactsActivity extends ListActivity {
 
         lv = getListView();
         lv.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
+
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Cursor cursor = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, null, null, null);
+                cursor.moveToPosition(position);
+                String name = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));
+                String phoneNumber = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
+
+                int color = Color.WHITE;
+                Drawable background = view.getBackground();
+                if (background instanceof ColorDrawable){
+                    color = ((ColorDrawable) background).getColor();
+                    if (color != Color.rgb(204, 255, 255)) {
+                        view.setBackgroundColor(Color.rgb(204, 255, 255));
+                    } else {
+                        view.setBackgroundColor(Color.WHITE);
+                    }
+                } else {
+                    view.setBackgroundColor(Color.rgb(204, 255, 255));
+                }
+                Log.d("Name: ", name);
+                Log.d("Phone#: ", phoneNumber);
+
+            }
+        });
     }
 
     //** Called when the user clicks the Continue button */
