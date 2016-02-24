@@ -1,11 +1,8 @@
 package com.connect.connectapp;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.widget.TextView;
 
 public class ConfirmationActivity extends AppCompatActivity {
@@ -22,9 +19,19 @@ public class ConfirmationActivity extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
-            String catchup_date_and_time = extras.getString("CATCHUP_DAY_AND_TIME");
+            String catchup_day_of_week = extras.getString("CATCHUP_DAY_OF_WEEK");
+            String month = extras.getString("CATCHUP_MONTH");
+            int catchup_date_of_month = extras.getInt("CATCHUP_DATE_OF_MONTH");
+            String catchup_time = extras.getString("CATCHUP_TIME");
             TextView your_first_call_obj = (TextView)findViewById(R.id.your_first_call);
-            your_first_call_obj.setText("Great, your first call is scheduled for " + catchup_date_and_time);
+            your_first_call_obj.setText("Congratulations, your first catchup is scheduled for "
+                    + catchup_day_of_week
+                    + ", "
+                    + month + " "
+                    + String.valueOf(catchup_date_of_month)
+                    + " at "
+                    + catchup_time
+                    + ".");
         }
     }
 

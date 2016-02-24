@@ -3,14 +3,12 @@ package com.connect.connectapp;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
-import android.widget.TextView;
+
 
 import java.util.Calendar;
 import java.util.logging.Logger;
@@ -124,24 +122,26 @@ public class AvailabilityActivity extends AppCompatActivity {
 
                 if (MyAvailability == true && HerAvailability == true) {
                     catchup_day = DaysOfWeek[i];
-                    catchup_time = TimesOfDay[j];
+                    switch (TimesOfDay[j]) {
+                        case "Morning":
+                            catchup_time = "10 am";
+                            break;
+                        case "Afternoon":
+                            catchup_time = "2 pm";
+                            break;
+                        case "Evening":
+                            catchup_time = "6 pm";
+                            break;
+                        default:
+                            catchup_time = "6 pm";
+                    }
                     break outerloop;
                 }
             }
         }
 
-        Log.d("Availability:", catchup_day + catchup_time);
-
         Calendar catchup_date = this.getNextDateForDayOfWeek(catchup_day);
-        String catchup_day_of_week = this.convertToDayOfWeek(catchup_date.get(Calendar.DAY_OF_WEEK));
-        String month = this.theMonth(catchup_date.get(Calendar.MONTH));
-        int catchup_date_of_month = catchup_date.get(Calendar.DAY_OF_MONTH);
-
-        Log.d("Catchup Day: ", catchup_day_of_week);
-        Log.d("Month: ", month);
-        Log.d("Date: ", String.valueOf(catchup_date_of_month));
-
-        this.startConfirmationActivity(catchup_day + catchup_time);
+        this.startConfirmationActivity(catchup_date, catchup_time);
     }
 
     private static String theMonth(int month){
@@ -217,11 +217,18 @@ public class AvailabilityActivity extends AppCompatActivity {
     }
 
     //  Start the new activity with the call date and time
-    private void startConfirmationActivity(String catchup_day_and_time) {
+    private void startConfirmationActivity(Calendar catchup_date, String catchup_time) {
+
+        String catchup_day_of_week = this.convertToDayOfWeek(catchup_date.get(Calendar.DAY_OF_WEEK));
+        String month = this.theMonth(catchup_date.get(Calendar.MONTH));
+        int catchup_date_of_month = catchup_date.get(Calendar.DAY_OF_MONTH);
 
         // Move on to the confirmation screen
         Intent intent = new Intent(this, ConfirmationActivity.class);
-        intent.putExtra("CATCHUP_DAY_AND_TIME", catchup_day_and_time);
+        intent.putExtra("CATCHUP_DAY_OF_WEEK", catchup_day_of_week);
+        intent.putExtra("CATCHUP_MONTH", month);
+        intent.putExtra("CATCHUP_DATE_OF_MONTH", catchup_date_of_month);
+        intent.putExtra("CATCHUP_TIME", catchup_time);
         startActivity(intent);
 
     }
