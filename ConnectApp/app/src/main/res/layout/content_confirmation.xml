@@ -27,7 +27,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:paddingTop="50dp"
         android:text="And don't worry, we'll remind you as your catch up approaches."
         android:textSize="18dp"
         android:fontFamily="sans-serif"

@@ -10,19 +10,22 @@
     android:background="#D8E9F0"
     tools:context=".SplashActivity">
 
-    <ImageView android:id="@+id/SplashImage"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/catchups_logo" />
     
-    <Button
+    <Button android:id="@+id/enter"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:text="Start Catching Up"
         android:textSize="20dp"
         android:textColor="#FFFFFF"
         android:background="#4AA0D5"
-        android:layout_alignBottom="@id/SplashImage"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentBottom="true"
         android:onClick="continueAction"/>
+
+    <ImageView android:id="@+id/SplashImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/catchups_logo_big"
+        android:layout_above="@id/enter"/>
 
 </RelativeLayout>

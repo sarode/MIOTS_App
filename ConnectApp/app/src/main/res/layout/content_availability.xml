@@ -73,7 +73,7 @@
 
             <TextView
             android:text="Monday"
-            android:textSize="14dp"
+            android:textSize="13dp"
             android:fontFamily="sans-serif-medium"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="13dp"
@@ -81,42 +81,42 @@
             />
             <TextView
             android:text="Tuesday"
-            android:textSize="14dp"
+            android:textSize="13dp"
                 android:layout_marginBottom="13dp"
             android:fontFamily="sans-serif-medium"
             android:textColor="#454553"
             />
             <TextView
             android:text="Wednesday"
-            android:textSize="14dp"
+            android:textSize="13dp"
                 android:layout_marginBottom="13dp"
             android:fontFamily="sans-serif-medium"
             android:textColor="#454553"
             />
             <TextView
             android:text="Thursday"
-            android:textSize="14dp"
+            android:textSize="13dp"
                 android:layout_marginBottom="13dp"
             android:fontFamily="sans-serif-medium"
             android:textColor="#454553"
             />
             <TextView
             android:text="Friday"
-            android:textSize="14dp"
+            android:textSize="13dp"
                 android:layout_marginBottom="13dp"
             android:fontFamily="sans-serif-medium"
             android:textColor="#454553"
             />
             <TextView
             android:text="Saturday"
-            android:textSize="14dp"
+            android:textSize="13dp"
                 android:layout_marginBottom="13dp"
             android:fontFamily="sans-serif-medium"
             android:textColor="#454553"
             />
             <TextView
             android:text="Sunday"
-            android:textSize="14dp"
+            android:textSize="13dp"
             android:fontFamily="sans-serif-medium"
             android:textColor="#454553"
             />
