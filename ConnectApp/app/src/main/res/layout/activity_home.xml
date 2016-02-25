@@ -18,30 +18,30 @@
         android:textSize="30dp"
         android:textColor="#EB586F"/>
 
-    <TabHost
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@android:id/tabhost"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
-        <RelativeLayout
-            android:orientation="vertical"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:padding="5dp">
-            <TabWidget
-                android:id="@android:id/tabs"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"/>
+    <!--<TabHost-->
+        <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+        <!--android:id="@android:id/tabhost"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="fill_parent">-->
+        <!--<RelativeLayout-->
+            <!--android:orientation="vertical"-->
+            <!--android:layout_width="fill_parent"-->
+            <!--android:layout_height="fill_parent"-->
+            <!--android:padding="5dp">-->
+            <!--<TabWidget-->
+                <!--android:id="@android:id/tabs"-->
+                <!--android:layout_width="fill_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_alignParentBottom="true"/>-->
 
-            <FrameLayout
-                android:id="@android:id/tabcontent"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:padding="5dp" />
+            <!--<FrameLayout-->
+                <!--android:id="@android:id/tabcontent"-->
+                <!--android:layout_width="fill_parent"-->
+                <!--android:layout_height="fill_parent"-->
+                <!--android:padding="5dp" />-->
 
-        </RelativeLayout>
-    </TabHost>
+        <!--</RelativeLayout>-->
+    <!--</TabHost>-->
 
 
 
