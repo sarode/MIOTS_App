@@ -16,110 +16,221 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="What times are generally best for you?"
-        android:textSize="24dp"/>
+        android:textSize="24dp"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="#454553"/>
 
-    <!--<TextView-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="Monday"/>-->
-    
-    <GridLayout android:id="@+id/availability_grid"
+
+    <LinearLayout android:id="@+id/times_of_day"
+    android:layout_width="match_parent"
+    android:layout_height="20dp"
+    android:orientation="horizontal"
+    android:layout_below="@id/what_availability_text"
+        android:layout_marginTop="10dp">
+
+        <TextView
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_weight="1"
+        android:text=""/>
+        <TextView
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_weight="1"
+        android:text="Morning"
+            android:layout_gravity="center"/>
+        <TextView
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_weight="1"
+        android:text="Afternoon"
+            android:layout_gravity="center"/>
+        <TextView
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_weight="1"
+        android:text="Evening"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_below="@id/times_of_day">
+
+        <GridLayout android:id="@+id/availability_grid"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:columnCount="4"
+            android:layout_weight="1"
+        android:columnCount="1"
         android:rowCount="7"
         android:orientation="horizontal"
-        android:layout_below="@id/what_availability_text"
-        android:paddingTop="30dp"
+        android:paddingTop="10dp"
         >
 
-        <!--<TextView-->
-            <!--android:text="Day"-->
-            <!--android:textSize="20dp"-->
-            <!--android:paddingRight="20dp"-->
-            />
-
-        <TextView
+            <TextView
             android:text="Monday"
-            android:textSize="20dp"
+            android:textSize="14dp"
+            android:fontFamily="sans-serif-medium"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="13dp"
+            android:textColor="#454553"
             />
-        <CheckBox android:id="@+id/MondayMorning"
-            />
-        <CheckBox android:id="@+id/MondayAfternoon"
-            />
-        <CheckBox android:id="@+id/MondayEvening"
-            />
-        <TextView
+            <TextView
             android:text="Tuesday"
-            android:textSize="20dp"
+            android:textSize="14dp"
+                android:layout_marginBottom="13dp"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="#454553"
             />
-        <CheckBox android:id="@+id/TuesdayMorning"
-            />
-        <CheckBox android:id="@+id/TuesdayAfternoon"
-            />
-        <CheckBox android:id="@+id/TuesdayEvening"
-            />
-        <TextView
+            <TextView
             android:text="Wednesday"
-            android:textSize="20dp"
+            android:textSize="14dp"
+                android:layout_marginBottom="13dp"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="#454553"
             />
-        <CheckBox android:id="@+id/WednesdayMorning"
-            />
-        <CheckBox android:id="@+id/WednesdayAfternoon"
-            />
-        <CheckBox android:id="@+id/WednesdayEvening"
-            />
-        <TextView
+            <TextView
             android:text="Thursday"
-            android:textSize="20dp"
+            android:textSize="14dp"
+                android:layout_marginBottom="13dp"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="#454553"
             />
-        <CheckBox android:id="@+id/ThursdayMorning"
-            />
-        <CheckBox android:id="@+id/ThursdayAfternoon"
-            />
-        <CheckBox android:id="@+id/ThursdayEvening"
-            />
-        <TextView
+            <TextView
             android:text="Friday"
-            android:textSize="20dp"
+            android:textSize="14dp"
+                android:layout_marginBottom="13dp"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="#454553"
             />
-        <CheckBox android:id="@+id/FridayMorning"
-            />
-        <CheckBox android:id="@+id/FridayAfternoon"
-            />
-        <CheckBox android:id="@+id/FridayEvening"
-            />
-        <TextView
+            <TextView
             android:text="Saturday"
-            android:textSize="20dp"
+            android:textSize="14dp"
+                android:layout_marginBottom="13dp"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="#454553"
             />
-        <CheckBox android:id="@+id/SaturdayMorning"
-            />
-        <CheckBox android:id="@+id/SaturdayAfternoon"
-            />
-        <CheckBox android:id="@+id/SaturdayEvening"
-            />
-        <TextView
+            <TextView
             android:text="Sunday"
-            android:textSize="20dp"
+            android:textSize="14dp"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="#454553"
             />
-        <CheckBox android:id="@+id/SundayMorning"
+        </GridLayout>
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:columnCount="1"
+            android:rowCount="7"
+            android:orientation="horizontal"
+            android:paddingTop="10dp"
+            >
+            <CheckBox android:id="@+id/MondayMorning"
+                android:layout_gravity="center"
             />
-        <CheckBox android:id="@+id/SundayAfternoon"
+            <CheckBox android:id="@+id/TuesdayMorning"
+                android:layout_gravity="center"
             />
-        <CheckBox android:id="@+id/SundayEvening"
+            <CheckBox android:id="@+id/WednesdayMorning"
+                android:layout_gravity="center"
             />
+            <CheckBox android:id="@+id/ThursdayMorning"
+                android:layout_gravity="center"
+                />
+            <CheckBox android:id="@+id/FridayMorning"
+                android:layout_gravity="center"
+                />
+            <CheckBox android:id="@+id/SaturdayMorning"
+                android:layout_gravity="center"
+                />
+            <CheckBox android:id="@+id/SundayMorning"
+                android:layout_gravity="center"
+                />
+        </GridLayout>
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:columnCount="1"
+            android:rowCount="7"
+            android:orientation="horizontal"
+            android:paddingTop="10dp"
+            >
+            <CheckBox android:id="@+id/MondayAfternoon"
+                android:layout_gravity="center"
+                />
+            <CheckBox android:id="@+id/TuesdayAfternoon"
+                android:layout_gravity="center"
+                />
+            <CheckBox android:id="@+id/WednesdayAfternoon"
+                android:layout_gravity="center"
+                />
+            <CheckBox android:id="@+id/ThursdayAfternoon"
+                android:layout_gravity="center"
+                />
+            <CheckBox android:id="@+id/FridayAfternoon"
+                android:layout_gravity="center"
+                />
+            <CheckBox android:id="@+id/SaturdayAfternoon"
+                android:layout_gravity="center"
+                />
+            <CheckBox android:id="@+id/SundayAfternoon"
+                android:layout_gravity="center"
+                />
+        </GridLayout>
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:columnCount="1"
+            android:rowCount="7"
+            android:orientation="horizontal"
+            android:paddingTop="10dp"
+            >
+            <CheckBox android:id="@+id/MondayEvening"
+                android:layout_gravity="center"
+                />
+            <CheckBox android:id="@+id/TuesdayEvening"
+                android:layout_gravity="center"
+                />
+            <CheckBox android:id="@+id/WednesdayEvening"
+                android:layout_gravity="center"
+                />
+            <CheckBox android:id="@+id/ThursdayEvening"
+                android:layout_gravity="center"
+                />
+            <CheckBox android:id="@+id/FridayEvening"
+                android:layout_gravity="center"
+                />
+            <CheckBox android:id="@+id/SaturdayEvening"
+                android:layout_gravity="center"
+                />
+            <CheckBox android:id="@+id/SundayEvening"
+                android:layout_gravity="center"
+                />
+        </GridLayout>
+
+    </LinearLayout>
 
 
-    </GridLayout>
 
     <Button android:id="@+id/continue_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:text="Continue"
-        android:textSize="24dp"
-        android:height="80dp"
+        android:textSize="20dp"
+        android:background="#4AA0D5"
+        android:textColor="#FFFFFF"
+        android:height="70dp"
         android:onClick="continueAction" />
 
 

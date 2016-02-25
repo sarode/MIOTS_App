@@ -26,7 +26,7 @@ public class ConfirmationActivity extends AppCompatActivity {
             int catchup_date_of_month = extras.getInt("CATCHUP_DATE_OF_MONTH");
             String catchup_time = extras.getString("CATCHUP_TIME");
             TextView your_first_call_obj = (TextView)findViewById(R.id.your_first_call);
-            your_first_call_obj.setText("Congratulations, your first catchup is scheduled for "
+            your_first_call_obj.setText("Great! We have scheduled your first catchup with Sarah Silvarado for "
                     + catchup_day_of_week
                     + ", "
                     + month + " "

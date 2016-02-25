@@ -112,7 +112,7 @@ public class AvailabilityActivity extends AppCompatActivity {
         Log.d("current day of week:", String.valueOf(current_day_of_week));
 
         String catchup_day = DaysOfWeek[6];     // Sunday
-        String catchup_time = TimesOfDay[2];    // Evening
+        String catchup_time = "6pm";    // Evening
 
         outerloop:
         for (int i = 0; i < DaysOfWeek.length; i++) {

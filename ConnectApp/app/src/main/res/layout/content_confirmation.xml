@@ -16,25 +16,44 @@
     <TextView android:id="@+id/your_first_call"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="40dp"
         android:text="Great!"
-        android:textSize="24dp"/>
-
-    <Button android:id="@+id/reschedule_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:text="Reschedule"
         android:textSize="24dp"
-        android:height="80dp"
-        android:onClick="rescheduleAction"/>
+        android:fontFamily="sans-serif-medium"
+        android:textColor="#454553"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="50dp"
+        android:text="And don't worry, we'll remind you as your catch up approaches."
+        android:textSize="18dp"
+        android:fontFamily="sans-serif"
+        android:textColor="#454553"
+        android:layout_below="@id/your_first_call"/>
 
     <Button android:id="@+id/confirm_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/reschedule_button"
-        android:paddingBottom="10dp"
+        android:layout_alignParentBottom="true"
         android:text="Confirm"
-        android:textSize="24dp"
-        android:height="80dp"
+        android:textSize="20dp"
+        android:layout_marginTop="10dp"
+        android:background="#4AA0D5"
+        android:textColor="#FFFFFF"
+        android:height="70dp"
         android:onClick="confirmAction"/>
+
+    <Button android:id="@+id/reschedule_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/confirm_button"
+        android:text="Reschedule"
+        android:textSize="20dp"
+        android:background="#EB586F"
+        android:textColor="#FFFFFF"
+        android:height="70dp"
+        android:onClick="rescheduleAction"/>
 </RelativeLayout>

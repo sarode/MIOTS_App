@@ -7,13 +7,16 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#D8E9F0"
     tools:context=".ContactsActivity">
 
     <TextView android:id="@+id/which_contacts_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Who do you want to stay in touch with?"
-        android:textSize="24dp"/>
+        android:text="Select the people you would like to regularly catch up with:"
+        android:textSize="24dp"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="#454553"/>
 
     <ListView android:id="@android:id/list"
         android:layout_width="fill_parent"
@@ -26,8 +29,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:text="Continue"
-        android:textSize="24dp"
-        android:height="80dp"
+        android:textSize="20dp"
+        android:background="#4AA0D5"
+        android:textColor="#FFFFFF"
+        android:height="70dp"
         android:onClick="continueAction" />
 
 </RelativeLayout>
