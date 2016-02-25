@@ -1,8 +1,10 @@
 package com.connect.connectapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.widget.TextView;
 
 public class ConfirmationActivity extends AppCompatActivity {
@@ -33,6 +35,18 @@ public class ConfirmationActivity extends AppCompatActivity {
                     + catchup_time
                     + ".");
         }
+    }
+
+    public void confirmAction(View view) {
+        // Move on to the availability screen
+        Intent intent = new Intent(this, HomeActivity.class);
+        startActivity(intent);
+    }
+
+    public void rescheduleAction(View view) {
+        // Move on to the availability screen
+        Intent intent = new Intent(this, HomeActivity.class);
+        startActivity(intent);
     }
 
 }
