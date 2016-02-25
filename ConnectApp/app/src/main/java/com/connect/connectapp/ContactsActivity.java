@@ -78,11 +78,16 @@ public class ContactsActivity extends ListActivity {
 
         int[] to = {android.R.id.text1, android.R.id.text2};
 
-        SimpleCursorAdapter listadapter = new SimpleCursorAdapter(this, android.R.layout.simple_list_item_2, cursor1, from, to);
+        SimpleCursorAdapter listadapter = new SimpleCursorAdapter(this, android.R.layout.simple_list_item_activated_2, cursor1, from, to);
 
         setListAdapter(listadapter);
 
         lv = getListView();
+
+//        for (int i = 0; i < lv.getCount(); i++) {
+//            (TwoLineListItem) v = (TwoLineListItem) lv.getChildAt(i);
+//        }
+
         lv.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
 
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -97,13 +102,13 @@ public class ContactsActivity extends ListActivity {
                 Drawable background = view.getBackground();
                 if (background instanceof ColorDrawable){
                     color = ((ColorDrawable) background).getColor();
-                    if (color != Color.rgb(204, 255, 255)) {
-                        view.setBackgroundColor(Color.rgb(204, 255, 255));
+                    if (color != Color.rgb(235, 88, 111)) {
+                        view.setBackgroundColor(Color.rgb(235, 88, 111));
                     } else {
-                        view.setBackgroundColor(Color.WHITE);
+                        view.setBackgroundColor(Color.rgb(216, 233, 240));
                     }
                 } else {
-                    view.setBackgroundColor(Color.rgb(204, 255, 255));
+                    view.setBackgroundColor(Color.rgb(235, 88, 111));
                 }
                 Log.d("Name: ", name);
                 Log.d("Phone#: ", phoneNumber);
@@ -111,6 +116,7 @@ public class ContactsActivity extends ListActivity {
             }
         });
     }
+
 
     //** Called when the user clicks the Continue button */
     public void continueAction(View view) {
